@@ -1,0 +1,43 @@
+.input {
+  font-size: 1rem;
+  transition: all 250ms ease-in-out;
+  padding: 0.75rem 1.25rem;
+  padding-right: 2.25rem;
+  border-radius: var(--border-rounded);
+  border: 1px solid var(--color-gray-300);
+  &:focus-visible {
+    outline: none;
+    border-color: var(--color-green-500);
+  }
+
+  //sizes
+  &--sm {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+  }
+  &--md {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+  }
+  &--lg {
+    font-size: 1.25rem;
+    padding: 1rem 1.5rem;
+  }
+
+  &--hasIcon {
+    padding-right: 1rem;
+  }
+  &__wrapper {
+    position: absolute;
+    display: inline-block;
+  }
+  &__icon {
+    display: flex;
+    position: absolute;
+    right: 0.625rem;
+    top: 50%;
+    svg {
+      transform: translateY(-50%);
+    }
+  }
+}
