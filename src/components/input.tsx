@@ -5,6 +5,7 @@ type InputProps = {
   placeholder?: string;
   icon?: ReactNode;
   size?: "sm" | "md" | "lg";
+  value: string;
 };
 
 const Input = ({ placeholder = "", icon, size }: InputProps) => {
@@ -16,6 +17,7 @@ const Input = ({ placeholder = "", icon, size }: InputProps) => {
         className={`input input--${size} ${icon && "input--hasIcon"} `}
         type="text"
       />
+      <div className="input__icon">{icon}</div>
     </div>
   );
 };
