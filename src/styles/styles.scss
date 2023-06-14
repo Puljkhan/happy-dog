@@ -8,12 +8,14 @@ body {
 
 :root {
   //colors
-  --color-black: #000;
-  --color-gray-300: #2c3e50;
-  --color-blue-500: #2980b9;
-  --color-green-500: #27ae60;
-  --color-red-500: #c0392b;
   --color-white: #fff;
+  --color-black: #333;
+  --color-gray-300: #ccc;
+  --color-gray-500: #999;
+  --color-gray-500-25: #a4b0be;
+  --color-red-500: #c0392b;
+  --color-green-500: #27ae60;
+  --color-blue-500: #2980b9;
 
   //border
   --border-rounded: 0.5rem;
@@ -21,4 +23,6 @@ body {
 
 @import "./components/btn.scss";
 @import "./components/container.scss";
+@import "./components/devider.scss";
 @import "./components/input.scss";
+@import "./components/modal.scss";

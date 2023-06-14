@@ -1,10 +1,14 @@
-//type DeviderProps = () => {
-//marginTop?: "sm" | "md" | "lg";
-//marginBottom?: "sm" | "md" | "lg";
-//};
+type DeviderProps = {
+  marginTop?: "sm" | "md" | "lg";
+  marginBottom?: "sm" | "md" | "lg";
+};
 
-//const Devider = ({ marginTop = "md", marginBottom = "md"}: DeviderProps)
-//return <button className={`devider devider--${marginBottom}`}>{text}</button>;
-//}:
+const Devider = ({ marginTop = "md", marginBottom = "md" }: DeviderProps) => {
+  return (
+    <div
+      className={`devider devider--mb--${marginBottom} devider--mt--${marginTop}`}
+    ></div>
+  );
+};
 
-//export default Devider;
+export default Devider;
