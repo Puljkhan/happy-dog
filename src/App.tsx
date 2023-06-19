@@ -1,16 +1,11 @@
-import { createBrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Layout from "./components/layout";
+import Contact from "./features/contact/contact";
+import Home from "./features/home/home";
 import NoMatch from "./features/no-match/no-match";
 import "./styles/styles.scss";
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Home />,
-    },
-  ]);
-
   return (
     <>
       <Routes>

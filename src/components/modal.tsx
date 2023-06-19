@@ -20,6 +20,9 @@ const Modal = ({ children, title, isOpen, onClose, onSuccess }: ModalProps) => {
     } else {
       bodyElement.style.overflow = "auto";
     }
+    return () => {
+      console.log("test");
+    };
   }, [isOpen]);
 
   return (

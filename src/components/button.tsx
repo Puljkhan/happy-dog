@@ -1,11 +1,11 @@
 import { ButtonHTMLAttributes } from "react";
 
 type ButtonProps = {
-  color?: "blue" | "green" | "red";
   text: string;
+  color?: "red" | "green" | "blue";
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Button = ({ color = "green", text, ...props }: ButtonProps) => {
+const Button = ({ text, color = "green", ...props }: ButtonProps) => {
   return (
     <button className={`btn btn--${color}`} {...props}>
       {text}
