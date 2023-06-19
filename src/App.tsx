@@ -5,7 +5,7 @@ import Home from "./features/home/home";
 import NoMatch from "./features/no-match/no-match";
 import "./styles/styles.scss";
 
-function App() {
+const App = () => {
   return (
     <>
       <Routes>
@@ -17,6 +17,6 @@ function App() {
       </Routes>
     </>
   );
-}
+};
 
 export default App;
