@@ -5,12 +5,12 @@ type SidebarProps = {
   onClose: () => void;
 };
 
-type LinkType = {
+export type LinkType = {
   path: string;
   label: string;
 };
 
-const linkList = [
+const linkList: LinkType[] = [
   {
     path: "/progress-bar",
     label: "Progress bar",
@@ -21,12 +21,23 @@ const linkList = [
   },
 ];
 
-const Sidebar = ({ isOpen }: SidebarProps) => {
+const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
   return (
     <div className={`sidebar ${isOpen ? "isActive" : ""}`}>
-      <NavLink className="sidebar-link" to="/progress-bar">
-        Progress bar
-      </NavLink>
+      {linkList.map((link) => {
+        return (
+          <div className="sidebar__link__wrapper">
+            <NavLink
+              key={link.path}
+              onClick={onClose}
+              className="sidebar__link"
+              to={link.path}
+            >
+              {link.label}
+            </NavLink>
+          </div>
+        );
+      })}
     </div>
   );
 };
