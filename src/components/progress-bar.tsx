@@ -1,26 +1,34 @@
-import React, { useState, useEffect } from "react";
-
 type ProgressBarProps = {
   progress: number;
   onFinish?: () => void;
 };
 
-const ProgressBar = ({ progress }: ProgressBarProps) => {
-  const handleState = (progress: number) => {
-    if (progress < 100) {
-      return "active";
-    }
+const ProgressBar = ({ progress, onFinish }: ProgressBarProps) => {
+  const handleProgress = (progress: number) => {
     if (progress === 100) {
-      return "success";
+      onFinish && onFinish();
     }
+    if (progress > 100) {
+      return "100%";
+    } else if (progress < 0) {
+      return "0%";
+    }
+    return `${progress}%`;
   };
 
   return (
-    <div className="progress-bar-container">
-      <div className="progress-bar" style={{ width: `${progress}%` }} />
-      <div className="progress-value">{progress}</div>
+    <div
+      className={`progressbar ${
+        progress === 100 ? "progressbar--finished" : ""
+      }`}
+    >
+      <div
+        className="progressbar__block"
+        style={{
+          width: handleProgress(progress),
+        }}
+      ></div>
     </div>
   );
 };
-
 export default ProgressBar;
