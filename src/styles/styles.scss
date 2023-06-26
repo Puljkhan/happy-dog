@@ -30,8 +30,15 @@ body {
 
   //border
   --border-rounded: 0.5rem;
+  --border-circle: 1000rem;
 }
 
+//responsive breakpoints
+$media-sm: 37.5em;
+$media-md: 53em;
+$media-lg: 64em;
+
+//components
 @import "./components/btn.scss";
 @import "./components/container.scss";
 @import "./components/devider.scss";
@@ -44,3 +51,9 @@ body {
 @import "./components/progress-bar.scss";
 @import "./components/loader.scss";
 @import "./components/select.scss";
+@import "./components/pagination.scss";
+@import "./components/card.scss";
+
+//utils
+
+@import "../utils/grid.scss";

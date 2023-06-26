@@ -5,8 +5,8 @@ import Home from "./features/home/home";
 import NoMatch from "./features/no-match/no-match";
 import "./styles/styles.scss";
 import ProgressBarPage from "./features/progress-bar/progress-bar-page";
-import Select from "./components/select";
 import SelectPage from "./features/select/select-page";
+import Animals from "./features/animals/animals";
 
 const App = () => {
   return (
@@ -17,6 +17,7 @@ const App = () => {
           <Route path="contact" element={<Contact />} />
           <Route path="progress-bar" element={<ProgressBarPage />} />
           <Route path="select" element={<SelectPage />} />
+          <Route path="animals" element={<Animals />} />
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>
