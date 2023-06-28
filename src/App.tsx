@@ -4,11 +4,12 @@ import Contact from "./features/contact/contact";
 import Home from "./features/home/home";
 import NoMatch from "./features/no-match/no-match";
 import "./styles/styles.scss";
-import ProgressBarPage from "./features/progress-bar/progress-bar-page";
+import LoaderPage from "./features/loader/loader-page";
 import SelectPage from "./features/select/select-page";
 import Animals from "./features/animals/animals";
+import ProgressBarPage from "./features/progress-bar-page/progress-bar-page";
 
-const App = () => {
+function App() {
   return (
     <>
       <Routes>
@@ -16,13 +17,17 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="contact" element={<Contact />} />
           <Route path="progress-bar" element={<ProgressBarPage />} />
+          <Route path="loader" element={<LoaderPage />} />
           <Route path="select" element={<SelectPage />} />
-          <Route path="animals" element={<Animals />} />
+          <Route path="animals">
+            <Route index element={<Animals />} />
+          </Route>
+
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>
     </>
   );
-};
+}
 
 export default App;

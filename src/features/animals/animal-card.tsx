@@ -1,7 +1,7 @@
 import { AnimalType } from "./animals";
-import imgHabitat from "../../assets/icons/images/imghabitat.png";
-import imgDiet from "../../assets/icons/images/imgdiet.png";
-import imgAnimalClass from "../../assets/icons/images/imganimal-class.png";
+import imganimalclass from "../../assets/icons/images/imganimal-class.png";
+import imgdiet from "../../assets/icons/images/imgdiet.png";
+import imghabitat from "../../assets/icons/images/imghabitat.png";
 
 type AnimalCardProps = {
   animal: AnimalType;
@@ -9,31 +9,34 @@ type AnimalCardProps = {
 
 const AnimalCard = ({ animal }: AnimalCardProps) => {
   const { name, animalClass, diet, species, habitat } = animal;
+
   return (
     <div className="card">
-      <img
-        className="card__header__img"
-        width={"100%"}
-        src={`https://source.unsplash.com/random/500x500/?${animal.name.replace(
-          " ",
-          "-"
-        )}`}
-        alt="animal"
-      />
-      <div>
-        <div className="card__title">{name}</div>
-        <div className="card__subtitle">{species}</div>
+      <div className="card__header">
+        <img
+          className="card__header__img"
+          width={"100%"}
+          src={`https://source.unsplash.com/random/500x500/?${animal.name.replace(
+            " ",
+            "-"
+          )}`}
+          alt="Image of an animal"
+        />
+        <div>
+          <div className="card__title">{name}</div>
+          <div className="card__subtitle">{species}</div>
+        </div>
       </div>
       <div className="card__row">
-        <img src={imgAnimalClass} alt="" />
+        <img src={imganimalclass} alt="icon of animal class" />
         <span>{animalClass}</span>
       </div>
       <div className="card__row">
-        <img src={imgDiet} alt="" />
+        <img src={imgdiet} alt="icon of animal diet" />
         <span>{diet}</span>
       </div>
       <div className="card__row">
-        <img src={imgHabitat} alt="habitat" />
+        <img src={imghabitat} alt="icon of animal habitat" />
         <span>{habitat}</span>
       </div>
     </div>
