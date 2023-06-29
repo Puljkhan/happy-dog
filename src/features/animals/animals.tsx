@@ -7,6 +7,7 @@ import Pagination from "../../components/pagination";
 import Select from "../../components/select";
 import { OptionType } from "../select/select-page";
 import FloatingButton from "../../components/floating-button";
+import { useNavigate } from "react-router";
 
 export type AnimalType = {
   name: string;
@@ -14,6 +15,7 @@ export type AnimalType = {
   animalClass: string;
   diet: string;
   habitat: string;
+  id: string;
 };
 
 const noOfItems = 20;
@@ -37,6 +39,8 @@ const Animals = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [page, setPage] = useState<number>(1);
   const [rpp, setRpp] = useState<number>(8);
+  const navigate = useNavigate();
+  const [noOfItems, setNoOfItems] = useState<number>(0);
 
   const getAnimals = () => {
     fetch(`http://localhost:3000/animals?_page=${page}&_limit=${rpp}`)
@@ -54,6 +58,19 @@ const Animals = () => {
       .catch((err) => console.log(err));
   };
 
+  const getAnimalsCount = () => {
+    fetch(`http://localhost:3000/animals?_page=${page}&_limit=${rpp}`)
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+      })
+      .then((data) => {
+        setNoOfItems(data.length);
+      })
+      .catch((err) => console.log(err));
+  };
+
   useEffect(() => {
     const numberOfPages = Math.ceil(noOfItems / rpp);
     if (page > numberOfPages) {
@@ -62,6 +79,10 @@ const Animals = () => {
       getAnimals();
     }
   }, [page, rpp]);
+
+  useEffect(() => {
+    getAnimalsCount;
+  });
 
   return (
     <Container>
@@ -86,7 +107,7 @@ const Animals = () => {
         numberOfPages={Math.ceil(noOfItems / rpp)}
         onPaginate={(activePage) => setPage(activePage)}
       />
-      <FloatingButton />
+      <FloatingButton onClick={() => navigate("/animals/new")} />
     </Container>
   );
 };

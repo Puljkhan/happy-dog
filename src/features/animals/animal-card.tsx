@@ -2,13 +2,14 @@ import { AnimalType } from "./animals";
 import imganimalclass from "../../assets/icons/images/imganimal-class.png";
 import imgdiet from "../../assets/icons/images/imgdiet.png";
 import imghabitat from "../../assets/icons/images/imghabitat.png";
+import Button from "../../components/button";
 
 type AnimalCardProps = {
   animal: AnimalType;
 };
 
 const AnimalCard = ({ animal }: AnimalCardProps) => {
-  const { name, animalClass, diet, species, habitat } = animal;
+  const { name, animalClass, diet, species, habitat, id } = animal;
 
   return (
     <div className="card">
@@ -39,6 +40,7 @@ const AnimalCard = ({ animal }: AnimalCardProps) => {
         <img src={imghabitat} alt="icon of animal habitat" />
         <span>{habitat}</span>
       </div>
+      <Button text="Delete" color="red" onClick={() => onDelete(id)} />
     </div>
   );
 };
