@@ -20,7 +20,7 @@
       "id": 3,
       "name": "Tiger",
       "species": "Panthera tigris",
-      "class": "Mammal",
+      "animalClass": "Mammal",
       "diet": "Carnivore",
       "habitat": "Various habitats, including forests and grasslands"
     },
@@ -28,7 +28,7 @@
       "id": 4,
       "name": "Giraffe",
       "species": "Giraffa camelopardalis",
-      "class": "Mammal",
+      "animalClass": "Mammal",
       "diet": "Herbivore",
       "habitat": "Savannas and open woodlands"
     },
@@ -36,7 +36,7 @@
       "id": 5,
       "name": "Penguin",
       "species": "Spheniscidae",
-      "class": "Bird",
+      "animalClass": "Bird",
       "diet": "Carnivore",
       "habitat": "Antarctica and the surrounding areas"
     },
@@ -44,7 +44,7 @@
       "id": 6,
       "name": "Cheetah",
       "species": "Acinonyx jubatus",
-      "class": "Mammal",
+      "animalClass": "Mammal",
       "diet": "Carnivore",
       "habitat": "Grasslands and open plains"
     },
@@ -52,7 +52,7 @@
       "id": 7,
       "name": "Gorilla",
       "species": "Gorilla gorilla",
-      "class": "Mammal",
+      "animalClass": "Mammal",
       "diet": "Herbivore",
       "habitat": "Rainforests"
     },
@@ -60,7 +60,7 @@
       "id": 8,
       "name": "Kangaroo",
       "species": "Macropus",
-      "class": "Mammal",
+      "animalClass": "Mammal",
       "diet": "Herbivore",
       "habitat": "Grasslands and forests"
     },
@@ -68,7 +68,7 @@
       "id": 9,
       "name": "Eagle",
       "species": "Accipitridae",
-      "class": "Bird",
+      "animalClass": "Bird",
       "diet": "Carnivore",
       "habitat": "Various habitats, including mountains and forests"
     },
@@ -76,7 +76,7 @@
       "id": 10,
       "name": "Dolphin",
       "species": "Delphinidae",
-      "class": "Mammal",
+      "animalClass": "Mammal",
       "diet": "Carnivore",
       "habitat": "Oceans and seas"
     },
@@ -84,7 +84,7 @@
       "id": 11,
       "name": "Panda",
       "species": "Ailuropoda melanoleuca",
-      "class": "Mammal",
+      "animalClass": "Mammal",
       "diet": "Herbivore",
       "habitat": "Bamboo forests"
     },
@@ -92,7 +92,7 @@
       "id": 12,
       "name": "Gorilla",
       "species": "Gorilla gorilla",
-      "class": "Mammal",
+      "animalClass": "Mammal",
       "diet": "Herbivore",
       "habitat": "Rainforests"
     },
@@ -100,7 +100,7 @@
       "id": 13,
       "name": "Koala",
       "species": "Phascolarctos cinereus",
-      "class": "Mammal",
+      "animalClass": "Mammal",
       "diet": "Herbivore",
       "habitat": "Eucalyptus forests"
     },
@@ -108,7 +108,7 @@
       "id": 14,
       "name": "Hippopotamus",
       "species": "Hippopotamus amphibius",
-      "class": "Mammal",
+      "animalClass": "Mammal",
       "diet": "Herbivore",
       "habitat": "Rivers and lakes"
     },
@@ -116,7 +116,7 @@
       "id": 15,
       "name": "Peacock",
       "species": "Pavo cristatus",
-      "class": "Bird",
+      "animalClass": "Bird",
       "diet": "Omnivore",
       "habitat": "Grasslands and forests"
     },
@@ -124,7 +124,7 @@
       "id": 16,
       "name": "Crocodile",
       "species": "Crocodylus niloticus",
-      "class": "Reptile",
+      "animalClass": "Reptile",
       "diet": "Carnivore",
       "habitat": "Rivers and wetlands"
     },
@@ -132,7 +132,7 @@
       "id": 17,
       "name": "Polar Bear",
       "species": "Ursus maritimus",
-      "class": "Mammal",
+      "animalClass": "Mammal",
       "diet": "Carnivore",
       "habitat": "Arctic regions"
     },
@@ -140,7 +140,7 @@
       "id": 18,
       "name": "Giant Panda",
       "species": "Ailuropoda melanoleuca",
-      "class": "Mammal",
+      "animalClass": "Mammal",
       "diet": "Herbivore",
       "habitat": "Bamboo forests"
     },
@@ -148,7 +148,7 @@
       "id": 19,
       "name": "Gibbon",
       "species": "Hylobatidae",
-      "class": "Mammal",
+      "animalClass": "Mammal",
       "diet": "Herbivore",
       "habitat": "Tropical rainforests"
     },
@@ -156,7 +156,7 @@
       "id": 20,
       "name": "Ostrich",
       "species": "Struthio camelus",
-      "class": "Bird",
+      "animalClass": "Bird",
       "diet": "Omnivore",
       "habitat": "Grasslands and deserts"
     }

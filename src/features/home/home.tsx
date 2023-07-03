@@ -1,6 +1,4 @@
 import { useState } from "react";
-import IconMoney from "../../assets/icons/money";
-import IconNotification from "../../assets/icons/notification";
 import Button from "../../components/button";
 import Container from "../../components/container";
 import Devider from "../../components/devider";

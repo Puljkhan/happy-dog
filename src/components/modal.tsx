@@ -1,6 +1,6 @@
 import { ReactNode, useEffect } from "react";
-import IconClose from "../assets/icons/close";
 import Button from "./button";
+import IconClose from "../assets/icons/close";
 
 type ModalProps = {
   children: ReactNode;

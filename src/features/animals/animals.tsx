@@ -7,29 +7,29 @@ import Pagination from "../../components/pagination";
 import Select from "../../components/select";
 import { OptionType } from "../select/select-page";
 import FloatingButton from "../../components/floating-button";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router-dom";
+import { dataHeaders } from "./animal-create";
 
 export type AnimalType = {
+  id: string;
   name: string;
   species: string;
   animalClass: string;
   diet: string;
   habitat: string;
-  id: string;
 };
 
-const noOfItems = 20;
 const rppOptions: OptionType[] = [
   {
     label: "4 životinje",
     value: "4",
   },
   {
-    label: "8 životinja",
+    label: "8 životinje",
     value: "8",
   },
   {
-    label: "12 životinja",
+    label: "12 životinje",
     value: "12",
   },
 ];
@@ -38,11 +38,14 @@ const Animals = () => {
   const [animals, setAnimals] = useState<AnimalType[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [page, setPage] = useState<number>(1);
+  //rows per page (limit koliko itema vidimo od jednom)
   const [rpp, setRpp] = useState<number>(8);
-  const navigate = useNavigate();
   const [noOfItems, setNoOfItems] = useState<number>(0);
 
+  const navigate = useNavigate();
+
   const getAnimals = () => {
+    setLoading(true);
     fetch(`http://localhost:3000/animals?_page=${page}&_limit=${rpp}`)
       .then((res) => {
         if (res.ok) {
@@ -59,7 +62,7 @@ const Animals = () => {
   };
 
   const getAnimalsCount = () => {
-    fetch(`http://localhost:3000/animals?_page=${page}&_limit=${rpp}`)
+    fetch(`http://localhost:3000/animals`)
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -71,18 +74,36 @@ const Animals = () => {
       .catch((err) => console.log(err));
   };
 
-  useEffect(() => {
-    const numberOfPages = Math.ceil(noOfItems / rpp);
-    if (page > numberOfPages) {
-      setPage(numberOfPages);
-    } else {
-      getAnimals();
-    }
-  }, [page, rpp]);
+  const handleDelete = (id: string) => {
+    fetch(`http://localhost:3000/animals/${id}`, {
+      method: "DELETE",
+      headers: dataHeaders,
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+      })
+      .then(() => {
+        getAnimals();
+      })
+      .catch((err) => console.log(err));
+  };
 
   useEffect(() => {
-    getAnimalsCount;
-  });
+    getAnimalsCount();
+  }, []);
+
+  useEffect(() => {
+    if (noOfItems > 0) {
+      const numberOfPages = Math.ceil(noOfItems / rpp);
+      if (page > numberOfPages) {
+        setPage(numberOfPages);
+      } else {
+        getAnimals();
+      }
+    }
+  }, [page, rpp, noOfItems]);
 
   return (
     <Container>
@@ -96,10 +117,15 @@ const Animals = () => {
         />
       </div>
       <Devider />
-      <div>Imamo itema: {animals.length}</div>
       <div className="grid grid--primary type--san-serif">
         {animals.map((animal) => {
-          return <AnimalCard key={animal.name} animal={animal} />;
+          return (
+            <AnimalCard
+              onDelete={(id: string) => handleDelete(id)}
+              key={animal.name}
+              animal={animal}
+            />
+          );
         })}
       </div>
       <Pagination
@@ -107,6 +133,7 @@ const Animals = () => {
         numberOfPages={Math.ceil(noOfItems / rpp)}
         onPaginate={(activePage) => setPage(activePage)}
       />
+
       <FloatingButton onClick={() => navigate("/animals/new")} />
     </Container>
   );
