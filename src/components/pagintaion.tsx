@@ -16,9 +16,7 @@ const Pagination = ({
     <div className="pagination">
       <span
         onClick={() => onPaginate(activePage - 1)}
-        className={`pagination__item ${
-          activePage <= numberOfPages ? "isDisabled" : ""
-        }`}
+        className={`pagination__item ${activePage <= 1 ? "isDisabled" : ""}`}
       >
         <IconChevronLeft />
       </span>

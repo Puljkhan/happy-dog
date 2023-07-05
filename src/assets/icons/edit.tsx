@@ -1,13 +1,12 @@
 const IconEdit = () => {
   return (
     <svg
+      width={24}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6"
-      width={24}
     >
       <path
         strokeLinecap="round"
@@ -17,4 +16,5 @@ const IconEdit = () => {
     </svg>
   );
 };
+
 export default IconEdit;

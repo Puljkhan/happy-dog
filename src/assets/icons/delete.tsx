@@ -1,12 +1,14 @@
-const Trash = () => {
+import { SVGProps } from "react";
+
+const IconDelete = ({ ...props }: SVGProps<SVGSVGElement>) => {
   return (
     <svg
+      width={24}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      width={24}
     >
       <path
         strokeLinecap="round"
@@ -17,4 +19,4 @@ const Trash = () => {
   );
 };
 
-export default Trash;
+export default IconDelete;

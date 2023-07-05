@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { OptionType } from "../features/select/select-page";
 import IconChevronDown from "../assets/icons/chevron-down";
+import { OptionType } from "../features/select/select-page";
 
 type SelectProps = {
   options: OptionType[];

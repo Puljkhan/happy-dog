@@ -19,13 +19,13 @@ body {
   --color-gray-900: #303030;
   --color-gray-800-25: rgba(75, 75, 75, 0.25);
   --color-gray-900: #222222;
-  --color-red-100: #e6958c;
+  --color-red-100: #ffeae7;
   --color-red-500: #c0392b;
   --color-red-600: #aa2a1c;
   --color-green-500: #27ae60;
   --color-green-600: #158f48;
   --color-blue-500: #2980b9;
-  --color-blue-500: #136297;
+  --color-blue-600: #136297;
   --color-orange-200: #ffddb8;
   --color-orange-500: #fd9e35;
   --color-orange-600: #da801a;
@@ -49,6 +49,7 @@ $media-lg: 64em;
 @import "./components/header.scss";
 @import "./components/input.scss";
 @import "./components/loader.scss";
+@import "./components/message.scss";
 @import "./components/modal.scss";
 @import "./components/no-match.scss";
 @import "./components/pagination.scss";
@@ -57,9 +58,9 @@ $media-lg: 64em;
 @import "./components/sidebar.scss";
 
 //pages
-@import "./page/animals.scss";
 @import "./page/progress-bar.scss";
+@import "./page/animals.scss";
 
 //utils
-@import "../utils//type.scss";
-@import "../utils/grid.scss";
+@import "./utils/grid.scss";
+@import "./utils/type.scss";

@@ -1,5 +1,5 @@
 import Container from "../../components/container";
-import notFound from "../../assets/images/not-found.avif";
+import notFound from "./../../assets/images/not-found.avif";
 const NoMatch = () => {
   return (
     <>

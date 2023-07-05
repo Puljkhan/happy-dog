@@ -1,10 +1,11 @@
 import { AnimalType } from "./animals";
-import imganimalclass from "../../assets/images/imganimal-class.png";
-import imgdiet from "../../assets/images/imgdiet.png";
-import imghabitat from "../../assets/images/imghabitat.png";
+import imgDiet from "./../../assets/images/diet.png";
+import imgClass from "./../../assets/images/animal-class.png";
+import imgHabitat from "./../../assets/images/habitat.png";
 import Button from "../../components/button";
-import { useNavigate } from "react-router";
-import Trash from "../../assets/icons/trash";
+import { useNavigate } from "react-router-dom";
+import IconDelete from "../../assets/icons/delete";
+import IconEdit from "../../assets/icons/edit";
 
 type AnimalCardProps = {
   animal: AnimalType;
@@ -16,9 +17,12 @@ const AnimalCard = ({ animal, onDelete }: AnimalCardProps) => {
   const navigate = useNavigate();
 
   return (
-    <div className="card">
+    <div className="card card--animal">
       <div className="card__header">
-        <div className="card__header__img__wrapper">
+        <div
+          className="card__header__img-wrapper"
+          onClick={() => navigate(`/animals/${id}`)}
+        >
           <img
             className="card__header__img"
             width={"100%"}
@@ -28,6 +32,7 @@ const AnimalCard = ({ animal, onDelete }: AnimalCardProps) => {
             )}`}
             alt="Image of an animal"
           />
+          <IconEdit />
         </div>
         <div>
           <div className="card__title">{name}</div>
@@ -35,26 +40,21 @@ const AnimalCard = ({ animal, onDelete }: AnimalCardProps) => {
         </div>
       </div>
       <div className="card__row">
-        <img src={imganimalclass} alt="icon of animal class" />
+        <img src={imgClass} alt="icon of animal class" />
         <span>{animalClass}</span>
       </div>
       <div className="card__row">
-        <img src={imgdiet} alt="icon of animal diet" />
+        <img src={imgDiet} alt="icon of animal diet" />
         <span>{diet}</span>
       </div>
       <div className="card__row">
-        <img src={imghabitat} alt="icon of animal habitat" />
+        <img src={imgHabitat} alt="icon of animal habitat" />
         <span>{habitat}</span>
       </div>
-      <div className="card__btn">
-        <Trash />
+      <div className="card__btn" onClick={() => onDelete(id)}>
+        <IconDelete />
+        <span>Delete</span>
       </div>
-      <Button text="Delete" color="red" onClick={() => onDelete(id)} />
-      <Button
-        text="Edit"
-        color="blue"
-        onClick={() => navigate(`/animals/${id}`)}
-      />
     </div>
   );
 };

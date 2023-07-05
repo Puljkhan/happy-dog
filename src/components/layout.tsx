@@ -8,9 +8,12 @@ const Layout = () => {
 
   return (
     <>
-      <Header toggleSidebar={() => setSidebarIsOpen(!sidebarIsOpen)} />
+      <Header
+        onClose={() => setSidebarIsOpen(false)}
+        toggleSidebar={() => setSidebarIsOpen(!sidebarIsOpen)}
+      />
       <Outlet />
-      <Sidebar onClose={() => setSidebarIsOpen} isOpen={sidebarIsOpen} />
+      <Sidebar onClose={() => setSidebarIsOpen(false)} isOpen={sidebarIsOpen} />
     </>
   );
 };

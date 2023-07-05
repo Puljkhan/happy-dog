@@ -28,15 +28,15 @@ export const initialData: Omit<AnimalType, "id"> = {
 export const baseInputs: InputsType[] = [
   {
     id: "name",
-    label: "Name of the animal",
+    label: "Name of an animal",
   },
   {
     id: "species",
-    label: "The animal's species",
+    label: "Animal species",
   },
   {
     id: "animalClass",
-    label: "Name of the animal's class",
+    label: "Animal class",
   },
   {
     id: "diet",
@@ -61,7 +61,9 @@ const AnimalCreate = () => {
   };
 
   const onSubmit = (inputsValue: ValuesType) => {
+    //Varijabala koja označava jeli se dogodio error
     let getOut = false;
+    //String u kojem držimo popis inputa u kojima se dogodio errror
     let errorInputs = "";
 
     // Optimiziraniji način
@@ -117,6 +119,7 @@ const AnimalCreate = () => {
       <h1>Create a new animal</h1>
       <Devider />
       {error && <div className="message message--error">{error}</div>}
+
       <div>
         {baseInputs.map((field) => {
           return (
@@ -129,8 +132,8 @@ const AnimalCreate = () => {
             />
           );
         })}
-        <Button text="Dodaj životinju" onClick={() => onSubmit(inputsValue)} />
       </div>
+      <Button text="Dodaj životinju" onClick={() => onSubmit(inputsValue)} />
     </Container>
   );
 };
